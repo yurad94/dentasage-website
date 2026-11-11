@@ -4,10 +4,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
-      disallow: ["/cart", "/blocked"],
+      allow: "",
+      disallow: "/",
     },
-    sitemap: "https://www.dentasage.com/sitemap.xml",
-    host: "https://www.dentasage.com",
   };
 }
