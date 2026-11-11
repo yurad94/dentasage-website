@@ -60,7 +60,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <CartProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-12">{children}</main>
           <Footer />
         </CartProvider>
       </body>

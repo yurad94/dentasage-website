@@ -10,9 +10,10 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Journal" },
+  { href: "/products", label: "Product" },
+  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -24,7 +25,7 @@ export function Navbar() {
 
   useEffect(() => {
     setMounted(true);
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -32,40 +33,56 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled ? "glass-nav border-b border-border" : "bg-transparent"
+        "fixed top-0 left-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-[#1c1c1e]/80 backdrop-blur-xl border-b border-white/10"
+          : "bg-gradient-to-b from-black/40 to-transparent"
       )}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Logo />
+      <nav className="mx-auto flex h-12 max-w-[980px] items-center justify-between px-4 sm:px-6">
+        {/* Logo - white version for dark nav */}
+        <Link href="/" className="flex items-center gap-2" aria-label="DENTASAGE home">
+          <img
+            src="/images/brand/logo-arrow.png"
+            alt="DENTASAGE"
+            className="h-5 w-auto brightness-0 invert"
+          />
+          <span className="text-[13px] font-medium tracking-[0.12em] text-white">
+            DENTASAGE
+          </span>
+        </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav - Apple style */}
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-sm transition-colors hover:text-accent",
-                pathname === link.href
-                  ? "font-medium text-accent"
-                  : "text-muted-foreground"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-[12px] font-normal transition-opacity hover:opacity-100",
+                  isActive ? "text-white opacity-100" : "text-white/80 opacity-90"
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <Link
             href="/cart"
-            className="relative rounded-full p-2 transition-colors hover:bg-muted"
+            className="relative rounded-full p-1.5 transition-opacity hover:opacity-70"
             aria-label="Shopping cart"
           >
-            <ShoppingBag className="h-5 w-5 text-foreground" />
+            <ShoppingBag className="h-4 w-4 text-white" />
             {mounted && count > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-accent px-1 text-[10px] font-medium text-white">
+              <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#2b7a9b] px-1 text-[9px] font-bold text-white">
                 {count}
               </span>
             )}
@@ -73,14 +90,14 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="rounded-full p-2 transition-colors hover:bg-muted md:hidden"
+            className="rounded-full p-1.5 transition-opacity hover:opacity-70 md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4 text-white" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-4 w-4 text-white" />
             )}
           </button>
         </div>
@@ -88,23 +105,27 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="glass-nav border-b border-border md:hidden">
-          <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={cn(
-                  "rounded-lg px-3 py-2.5 text-base transition-colors hover:bg-muted",
-                  pathname === link.href
-                    ? "font-medium text-accent"
-                    : "text-foreground"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+        <div className="border-t border-white/10 bg-[#1c1c1e]/95 backdrop-blur-xl md:hidden">
+          <div className="flex flex-col gap-1 px-6 py-4">
+            {navLinks.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    "border-b border-white/5 py-3 text-sm transition-opacity",
+                    isActive ? "text-white" : "text-white/70"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
