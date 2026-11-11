@@ -12,7 +12,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dentasage.com"),
+  metadataBase: new URL("https://www.dentasage.com"),
   title: {
     default: "DENTASAGE — Precision Dental Instruments",
     template: "%s | DENTASAGE",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dentasage.com",
+    url: "https://www.dentasage.com",
     siteName: "DENTASAGE",
     title: "DENTASAGE — Precision Dental Instruments",
     description:

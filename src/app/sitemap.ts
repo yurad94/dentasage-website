@@ -3,7 +3,7 @@ import { products } from "@/lib/data/products";
 import { blogPosts } from "@/lib/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://dentasage.com";
+  const baseUrl = "https://www.dentasage.com";
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [

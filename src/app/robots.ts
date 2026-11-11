@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/cart", "/blocked"],
     },
-    sitemap: "https://dentasage.com/sitemap.xml",
-    host: "https://dentasage.com",
+    sitemap: "https://www.dentasage.com/sitemap.xml",
+    host: "https://www.dentasage.com",
   };
 }
