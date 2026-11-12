@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   readingTime: string;
   category: string;
+  coverImage: string;
   content: string;
 }
 
@@ -17,6 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-20",
     readingTime: "4 min read",
     category: "Engineering",
+    coverImage: "/images/generated/hero-product-grey.jpg",
     content: `## The problem with conventional mirrors
 
 A conventional glass mirror reflects from both the front surface of the glass and the silvered backing. The result is a faint secondary image — a "ghost" — that slightly offsets the true reflection. In a dental operatory, that offset obscures fine detail exactly where it matters most: marginal ridges, fracture lines, and the interface of a restoration.
@@ -37,6 +39,7 @@ Reflectance alone does not guarantee accuracy. A mirror can be bright yet shift 
     date: "2026-05-15",
     readingTime: "3 min read",
     category: "Clinical",
+    coverImage: "/images/generated/hero-color-practice.jpg",
     content: `## Color as organization
 
 In a busy practice, mirror color often serves as a visual coding system. A common approach is to assign colors to specific operators, procedure types, or sterilization batches — making it easy to confirm at a glance that the right instrument is in hand.
@@ -57,6 +60,7 @@ All finishes share the same front-surface optical performance. The color is pure
     date: "2026-05-10",
     readingTime: "4 min read",
     category: "Engineering",
+    coverImage: "/images/generated/clinical-3.jpg",
     content: `## The real cost of a dental mirror
 
 The purchase price of a mirror matters far less than its cost per use. A mirror that degrades after 100 sterilization cycles needs replacing several times a year. A mirror that holds its reflectance through 900+ cycles delivers a fraction of the cost per use.

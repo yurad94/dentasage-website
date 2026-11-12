@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { CartProvider } from "@/components/cart/CartProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,19 +10,15 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dentasage.com"),
-  title: {
-    default: "DENTASAGE — Precision Dental Instruments",
-    template: "%s | DENTASAGE",
-  },
+  title: "DENTASAGE — Precision Dental Mirrors",
   description:
-    "DENTASAGE designs and manufactures premium dental mirrors and instruments. Engineered for clarity, durability, and ergonomic precision in everyday clinical use.",
+    "DENTASAGE crafts premium dental mirrors engineered for clarity, durability, and ergonomic precision. Coming soon.",
   keywords: [
     "dental mirror",
     "dental instruments",
     "dentasage",
     "front surface mirror",
     "dental tools",
-    "clinical dental equipment",
   ],
   authors: [{ name: "DENTASAGE" }],
   creator: "DENTASAGE",
@@ -34,15 +27,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.dentasage.com",
     siteName: "DENTASAGE",
-    title: "DENTASAGE — Precision Dental Instruments",
+    title: "DENTASAGE — Precision Dental Mirrors",
     description:
-      "Premium dental mirrors engineered for clarity, durability, and ergonomic precision.",
+      "Premium dental mirrors engineered for clarity, durability, and ergonomic precision. Coming soon.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DENTASAGE — Precision Dental Instruments",
+    title: "DENTASAGE — Precision Dental Mirrors",
     description:
-      "Premium dental mirrors engineered for clarity, durability, and ergonomic precision.",
+      "Premium dental mirrors engineered for clarity, durability, and ergonomic precision. Coming soon.",
   },
   robots: {
     index: true,
@@ -57,12 +50,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
-        <CartProvider>
-          <Navbar />
-          <main className="flex-1 pt-12">{children}</main>
-          <Footer />
-        </CartProvider>
+      <body className="min-h-full bg-[#f5f5f7] text-[#1d1d1f]">
+        {children}
       </body>
     </html>
   );

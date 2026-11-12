@@ -102,29 +102,20 @@ export function middleware(request: NextRequest) {
   // Check if preview mode is being activated via ?preview=SECRET
   const previewParam = url.searchParams.get("preview");
   if (previewParam === PREVIEW_SECRET) {
-    const response = NextResponse.next();
+    const response = NextResponse.redirect(new URL(pathname, request.url));
     response.cookies.set("dentasage-preview", "true", {
       maxAge: 60 * 60 * 24 * 30, // 30 days
       path: "/",
       httpOnly: true,
       sameSite: "lax",
     });
-    // Redirect to clean URL (remove the query param)
-    const cleanUrl = new URL(pathname, request.url);
-    const redirectResponse = NextResponse.redirect(cleanUrl);
-    redirectResponse.cookies.set("dentasage-preview", "true", {
-      maxAge: 60 * 60 * 24 * 30,
-      path: "/",
-      httpOnly: true,
-      sameSite: "lax",
-    });
-    return redirectResponse;
+    return response;
   }
 
   // Check if visitor already has the preview cookie
   const hasPreviewCookie = request.cookies.get("dentasage-preview")?.value === "true";
 
-  // Allow static assets, robots, sitemap through even in maintenance
+  // Allow static assets through even in maintenance
   const isStaticAsset =
     pathname.startsWith("/_next") ||
     pathname.startsWith("/images") ||
