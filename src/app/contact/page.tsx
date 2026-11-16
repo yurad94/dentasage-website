@@ -34,7 +34,7 @@ export default function ContactPage() {
         </a>
 
         <a
-          href="https://wa.me/008618867360256"
+          href="https://wa.me/message/KRVM27CKATS7B1"
           className="group flex flex-col items-center rounded-2xl border border-border bg-white p-8 transition-all hover:shadow-lg"
         >
           <MessageCircle className="h-8 w-8 text-accent" />

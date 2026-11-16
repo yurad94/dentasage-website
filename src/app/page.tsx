@@ -160,7 +160,7 @@ export default function LandingPage() {
             </a>
             <span style={{ color: "#d2d2d7" }}>|</span>
             <a
-              href="https://wa.me/008618867360256"
+              href="https://wa.me/message/KRVM27CKATS7B1"
               style={{ color: "#8e8e93", textDecoration: "none" }}
             >
               WhatsApp
