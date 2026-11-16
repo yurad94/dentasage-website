@@ -57,9 +57,8 @@ export const products: Product[] = [
         id: "grey",
         name: "Surgical Grey",
         hex: "#8a8d91",
-        mainImage: "/images/generated/hero-product-grey.jpg",
+        mainImage: "/images/generated/product-grey-card.jpg",
         gallery: [
-          "/images/generated/hero-product-grey.jpg",
           "/images/generated/product-grey-card.jpg",
         ],
       },

@@ -160,7 +160,7 @@ export default function LandingPage() {
             </a>
             <span style={{ color: "#d2d2d7" }}>|</span>
             <a
-              href="https://wa.me/0000000000"
+              href="https://wa.me/008618867360256"
               style={{ color: "#8e8e93", textDecoration: "none" }}
             >
               WhatsApp
@@ -218,7 +218,7 @@ export default function LandingPage() {
           }}
         >
           {[
-            { img: "/images/generated/hero-product-grey.jpg", name: "Surgical Grey", hex: "#8a8d91" },
+            { img: "/images/generated/product-grey-card.jpg", name: "Surgical Grey", hex: "#8a8d91" },
             { img: "/images/generated/hero-product-black.jpg", name: "Matte Black", hex: "#1c1c1e" },
             { img: "/images/generated/hero-product-orange.jpg", name: "Signal Orange", hex: "#f97316" },
             { img: "/images/generated/hero-product-pink.jpg", name: "Magenta Pink", hex: "#d946ef" },

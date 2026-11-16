@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-20",
     readingTime: "4 min read",
     category: "Engineering",
-    coverImage: "/images/generated/hero-product-grey.jpg",
+    coverImage: "/images/generated/hero-dental-instruments.jpg",
     content: `## The problem with conventional mirrors
 
 A conventional glass mirror reflects from both the front surface of the glass and the silvered backing. The result is a faint secondary image — a "ghost" — that slightly offsets the true reflection. In a dental operatory, that offset obscures fine detail exactly where it matters most: marginal ridges, fracture lines, and the interface of a restoration.
