@@ -16,7 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
     >
       <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-b from-white to-muted">
         <Image
-          src={primaryColor.mainImage}
+          src="/images/generated/hero-color-practice.jpg"
           alt={product.name}
           fill
           className="object-contain transition-transform duration-500 group-hover:scale-105"
