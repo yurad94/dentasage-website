@@ -2,20 +2,32 @@
 
 import { useState } from "react";
 import type { Product } from "@/lib/data/products";
-import { ProductGallery } from "./ProductGallery";
 import { ColorSelector } from "./ColorSelector";
 import { AddToCartButton } from "./AddToCartButton";
+import { Product360Viewer } from "./Product360Viewer";
 
 export function ProductDetailClient({ product }: { product: Product }) {
-  const [selectedColorId, setSelectedColorId] = useState(product.colors[0].id);
+  // Default to black instead of grey so the first load doesn't show the grey banner
+  const [selectedColorId, setSelectedColorId] = useState(
+    product.colors.find((c) => c.id === "black")?.id || product.colors[0].id
+  );
   const selectedColor =
     product.colors.find((c) => c.id === selectedColorId) || product.colors[0];
 
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-      {/* Left: Gallery */}
+      {/* Left: 360° viewer (replaces the static gallery banner) */}
       <div className="lg:sticky lg:top-24 lg:self-start">
-        <ProductGallery color={selectedColor} productName={product.name} />
+        <div className="mb-2 text-center lg:text-left">
+          <p className="text-xs text-muted-foreground">
+            Drag to rotate · 360° interactive view
+          </p>
+        </div>
+        <Product360Viewer
+          images={product.images360}
+          alt={`${product.name} 360 degree view`}
+          className="mx-auto w-full max-w-xl"
+        />
       </div>
 
       {/* Right: Info */}

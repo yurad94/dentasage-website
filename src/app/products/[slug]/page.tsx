@@ -5,11 +5,7 @@ import {
   getProductBySlug,
   getAllProductSlugs,
 } from "@/lib/data/products";
-import { ProductGallery } from "@/components/product/ProductGallery";
-import { ColorSelector } from "@/components/product/ColorSelector";
-import { Product360Viewer } from "@/components/product/Product360Viewer";
 import { SpecTable } from "@/components/product/SpecTable";
-import { AddToCartButton } from "@/components/product/AddToCartButton";
 import { ProductDetailClient } from "@/components/product/ProductDetailClient";
 
 export const dynamic = "force-static";
@@ -83,23 +79,6 @@ export default async function ProductDetailPage({
         </nav>
 
         <ProductDetailClient product={product} />
-
-        {/* 360 Viewer section */}
-        <section className="mt-20">
-          <div className="mb-6 text-center">
-            <h2 className="text-2xl font-semibold text-foreground">
-              See it from every angle
-            </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Drag to rotate · 360° interactive view
-            </p>
-          </div>
-          <Product360Viewer
-            images={product.images360}
-            alt={`${product.name} 360 degree view`}
-            className="mx-auto max-w-2xl"
-          />
-        </section>
 
         {/* Features grid */}
         <section className="mt-24">
