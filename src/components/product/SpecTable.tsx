@@ -12,11 +12,11 @@ export function SpecTable({ specs }: { specs: ProductSpec[] }) {
             >
               <th
                 scope="row"
-                className="w-1/2 px-4 py-3 text-left text-sm font-medium text-muted-foreground sm:px-6"
+                className="w-1/2 break-words px-3 py-3 text-left text-xs font-medium text-muted-foreground sm:px-6 sm:text-sm"
               >
                 {spec.label}
               </th>
-              <td className="px-4 py-3 text-sm text-foreground sm:px-6">
+              <td className="break-words px-3 py-3 text-xs text-foreground sm:px-6 sm:text-sm">
                 {spec.value}
               </td>
             </tr>

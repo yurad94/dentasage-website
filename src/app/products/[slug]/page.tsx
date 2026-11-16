@@ -68,9 +68,9 @@ export default async function ProductDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12">
         {/* Breadcrumb */}
-        <nav className="mb-8 flex items-center gap-2 text-sm text-muted-foreground">
+        <nav className="mb-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground sm:mb-8 sm:text-sm">
           <a href="/" className="hover:text-accent">Home</a>
           <span>/</span>
           <a href="/products" className="hover:text-accent">Products</a>
@@ -81,20 +81,20 @@ export default async function ProductDetailPage({
         <ProductDetailClient product={product} />
 
         {/* Features grid */}
-        <section className="mt-24">
-          <h2 className="text-center text-2xl font-semibold text-foreground">
+        <section className="mt-12 sm:mt-16 lg:mt-24">
+          <h2 className="text-center text-xl font-semibold text-foreground sm:text-2xl">
             Engineered for clinical excellence
           </h2>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {product.features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-2xl border border-border bg-white p-6"
+                className="rounded-2xl border border-border bg-white p-4 sm:p-6"
               >
-                <h3 className="text-base font-semibold text-foreground">
+                <h3 className="text-sm font-semibold text-foreground sm:text-base">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
                   {feature.description}
                 </p>
               </div>
@@ -103,8 +103,8 @@ export default async function ProductDetailPage({
         </section>
 
         {/* Specifications */}
-        <section className="mt-24">
-          <h2 className="mb-8 text-center text-2xl font-semibold text-foreground">
+        <section className="mt-12 sm:mt-16 lg:mt-24">
+          <h2 className="mb-6 text-center text-xl font-semibold text-foreground sm:mb-8 sm:text-2xl">
             Technical specifications
           </h2>
           <div className="mx-auto max-w-3xl">
@@ -113,11 +113,11 @@ export default async function ProductDetailPage({
         </section>
 
         {/* Related inquiry CTA */}
-        <section className="mt-24 rounded-2xl bg-foreground p-8 text-center text-white sm:p-12">
-          <h2 className="text-2xl font-semibold">
+        <section className="mt-12 rounded-2xl bg-foreground p-6 text-center text-white sm:mt-16 sm:p-8 lg:mt-24 lg:p-12">
+          <h2 className="text-xl font-semibold sm:text-2xl">
             Ready to equip your clinic?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">
+          <p className="mx-auto mt-3 max-w-xl text-xs text-white/70 sm:text-sm">
             Bulk orders, multi-color sets, and OEM finishes available. Contact
             our team for pricing and lead times.
           </p>

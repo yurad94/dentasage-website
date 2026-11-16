@@ -11,31 +11,31 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <div className="text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
+        <p className="text-xs font-medium uppercase tracking-[0.15em] text-accent sm:tracking-[0.2em] sm:text-sm">
           DENTASAGE Collection
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <h1 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
           Precision in every reflection
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
+        <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:mt-4 sm:text-base lg:text-lg">
           Dental instruments designed for clear visibility and comfortable
           handling — a clean, practical choice for everyday clinical use.
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {products.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}
       </div>
 
-      <div className="mt-16 rounded-2xl bg-muted p-8 text-center sm:p-12">
-        <h2 className="text-2xl font-semibold text-foreground">
+      <div className="mt-10 rounded-2xl bg-muted p-6 text-center sm:mt-16 sm:p-8 lg:p-12">
+        <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
           Need a custom configuration?
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+        <p className="mx-auto mt-3 max-w-xl text-xs text-muted-foreground sm:text-sm">
           We support bulk orders, clinic-specific color sets, and OEM finishes.
           Reach out to our team for a tailored quote.
         </p>

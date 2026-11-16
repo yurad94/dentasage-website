@@ -101,9 +101,10 @@ export function Product360Viewer({ images, alt, className }: Product360ViewerPro
     <div
       ref={containerRef}
       className={cn(
-        "group relative flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-white to-muted",
+        "group relative flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-white to-muted w-full",
         className
       )}
+      style={{ maxWidth: "100%" }}
     >
       <div
         onPointerDown={handlePointerDown}
@@ -111,7 +112,7 @@ export function Product360Viewer({ images, alt, className }: Product360ViewerPro
         onPointerUp={handlePointerUp}
         onPointerLeave={handlePointerUp}
         className="relative flex h-full w-full cursor-grab items-center justify-center touch-none select-none active:cursor-grabbing"
-        style={{ aspectRatio: "4 / 3" }}
+        style={{ aspectRatio: "1 / 1", maxHeight: "70vh" }}
       >
         {!loaded && (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -123,7 +124,8 @@ export function Product360Viewer({ images, alt, className }: Product360ViewerPro
           <img
             src={images[currentFrame]}
             alt={alt}
-            className="max-h-full max-w-full object-contain"
+            className="max-h-full max-w-full h-auto w-auto object-contain"
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
             draggable={false}
           />
         )}
